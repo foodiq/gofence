@@ -8,7 +8,7 @@ Code used from [Unwinding Uber's Most Efficient Service](https://medium.com/@buc
 
 ```
 // omitting the dot installs to /usr/local/bin
-curl -sSL https://raw.githubusercontent.com/buckhx/gofence/master/scripts/install.py | python - .
+curl -sSL https://raw.githubusercontent.com/foodiq/gofence/master/scripts/install.py | python - .
 ```
 
 ## Usage
@@ -17,6 +17,18 @@ Invoking the fence cli will start an HTTP server and read geojson files from a d
 The features in the geojson will be searchable at different endpoints for each file.
 The endpoints will use a url-safe slug of the file name as their identifiers.
 
+### start App
+gofence directory must include the geojson file. pls be allert to give the json object a property name (samples included in repo)
+```
+./fence /home/ubuntu/gofence/ &
+```
+
+### query:
+```
+curl "localhost:8080/fence/geo/search?lat=46.620322&lon=14.29681"
+```
+
+### usage:
 ```
 NAME:
    fence - Fence geojson point features
