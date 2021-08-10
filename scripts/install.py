@@ -34,7 +34,7 @@ if kernel == 'windows':
 dist = "{0}_{1}".format(kernel.lower(), arch.lower())
 artifact = "{0}_{1}{2}".format("fence", dist, ext)
 
-content = urllib.urlopen('https://api.github.com/repos/buckhx/gofence/releases/latest').read()
+content = urllib.urlopen('https://api.github.com/repos/foodiq/gofence/releases/latest').read()
 release = json.loads(content)
 link = [asset['browser_download_url'] for asset in release['assets'] if asset['name'] == artifact][0]
 print("Downloading binary from", link)
